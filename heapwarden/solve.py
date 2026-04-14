@@ -18,7 +18,7 @@ def conn():
         # r = gdb.debug ([exe.path], "b *main", env={'SHELL': '/bin/bash'})
         # r = gdb.debug ([exe.path], "b *__libc_start_main+214", env={'SHELL': '/bin/bash'})
     else:
-        r = remote("host8.dreamhack.games", 18105)
+        r = remote("host8.dreamhack.games", 8804)
 
     return r
 
