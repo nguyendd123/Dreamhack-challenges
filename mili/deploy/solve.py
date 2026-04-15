@@ -10,16 +10,43 @@ context.binary = exe
 context.log_level = "debug"
 context.terminal = ['kgx', '--', 'bash', '-c']
 
+local_port = 5000
+localscript = f'''
+file {exe.path}
+define rerun
+    !docker exec -u root -i debug_container bash -c "kill -9 \\$(pidof gdbserver) &"
+    !docker exec -u root -i debug_container bash -c "gdbserver :9090 --attach \\$(pidof chall) &"
+end
+define con
+    target remote :9090
+end
+'''
+
+gdbscript = '''
+b *main
+c
+'''
+
+
 def conn():
     if args.LOCAL:
-        r = process([exe.path])
+        r = remote ("localhost", local_port)
     elif args.GDB:
-        r = gdb.debug ([exe.path], "b *main", env={'SHELL': '/bin/bash'})
-        # r = gdb.debug ([exe.path], "b *__libc_start_main+214", env={'SHELL': '/bin/bash'})
+        r = gdb.debug ([exe.path], gdbscript=gdbscript, env={'SHELL': '/bin/bash'})
     elif args.REMOTE:
         r = remote("host8.dreamhack.games", 9153)
 
     return r
+
+def debug_container(p):
+    if args.LOCAL:
+        gdbserver_cmd = "docker exec -u root -i debug_container bash -c".split()
+        gdbserver_cmd.append("gdbserver :9090 --attach $(pidof prob)")
+        process(gdbserver_cmd)
+        
+        # gdb.attach(('0.0.0.0', 9090), exe=exe.path, gdbscript=localscript)
+        pause()
+
 
 def lookup_query (p, idx):
     p.sendlineafter (b'Enter the instruction: ', b'lookup_query')
@@ -37,6 +64,9 @@ def mov  (p, src, des):
 
 def main():
     p = conn()
+    if args.LOCAL and args.GDB:
+        debug_container (p)
+    
     lookup_register (p, b'-16')
     p.recvuntil (b'contains ')
     first_half =  int (p.recvline ()[:-1].decode()) & 0xffffffff
