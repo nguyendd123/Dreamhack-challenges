@@ -1,4 +1,5 @@
 # Dreamhack challenge's exploits
 There are almost all of challenges that I've solved.
+And I'm too lazy to make writeups...
 
-And I'm too lazy to make writeups ...
+My Dreamhack account: [nguyen_dd](https://dreamhack.io/users/72843)
