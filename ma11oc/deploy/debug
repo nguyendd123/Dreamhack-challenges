@@ -1,0 +1,108 @@
+================================================================================
+= Started at 2026-04-30T15:30:48                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+================================================================================
+= Started at 2026-04-30T15:30:48                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:30:48:INFO:pwnlib.tubes.process.process.139649174650368:Starting local process './chall_patched'
+2026-04-30T15:30:48:INFO:pwnlib.tubes.process.process.139649174650368:Starting local process './chall_patched': pid 20029
+================================================================================
+= Started at 2026-04-30T15:30:48                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:30:48:INFO:pwnlib.tubes.process.process.139649171571728:Starting local process '/usr/bin/gdbserver'
+2026-04-30T15:30:48:INFO:pwnlib.tubes.process.process.139649171571728:Starting local process '/usr/bin/gdbserver': pid 20031
+2026-04-30T15:30:48:DEBUG:pwnlib.gdb:Wrote gdb script to '/tmp/pwnlib-gdbscript-zn6ik99r.gdb'
+target remote 127.0.0.1:42135
+
+
+2026-04-30T15:30:48:INFO:pwnlib.gdb:running in new terminal: ['/usr/bin/gdb', '-q', './chall_patched', '-x', '/tmp/pwnlib-gdbscript-zn6ik99r.gdb']
+2026-04-30T15:30:48:DEBUG:pwnlib.util.misc:Created script for new terminal:
+#!/usr/bin/python
+import os
+os.execve('/usr/bin/gdb', ['/usr/bin/gdb', '-q', './chall_patched', '-x', '/tmp/pwnlib-gdbscript-zn6ik99r.gdb'], os.environ)
+
+2026-04-30T15:30:48:DEBUG:pwnlib.util.misc:Launching a new terminal: ['/usr/bin/kgx', '--', 'bash', '-c', '/tmp/tmpxd9zmd0n']
+================================================================================
+= Started at 2026-04-30T15:30:56                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+================================================================================
+= Started at 2026-04-30T15:30:56                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:30:56:INFO:pwnlib.tubes.process.process.139649171571728:Process '/usr/bin/gdbserver' stopped with exit code 0 (pid 20034)
+================================================================================
+= Started at 2026-04-30T15:30:56                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:30:56:INFO:pwnlib.tubes.process.process.139649174650368:Stopped process './chall_patched' (pid 20029)
+================================================================================
+= Started at 2026-04-30T15:31:12                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+================================================================================
+= Started at 2026-04-30T15:31:12                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:31:12:INFO:pwnlib.tubes.process.process.139986255363584:Starting local process './chall_patched'
+2026-04-30T15:31:12:INFO:pwnlib.tubes.process.process.139986255363584:Starting local process './chall_patched': pid 20138
+================================================================================
+= Started at 2026-04-30T15:31:12                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:31:12:INFO:pwnlib.tubes.process.process.139986254365712:Starting local process '/usr/bin/gdbserver'
+2026-04-30T15:31:12:INFO:pwnlib.tubes.process.process.139986254365712:Starting local process '/usr/bin/gdbserver': pid 20140
+2026-04-30T15:31:12:DEBUG:pwnlib.gdb:Wrote gdb script to '/tmp/pwnlib-gdbscript-w3ygs817.gdb'
+target remote 127.0.0.1:38397
+
+brva 0x17ff
+continue
+
+2026-04-30T15:31:12:INFO:pwnlib.gdb:running in new terminal: ['/usr/bin/gdb', '-q', './chall_patched', '-x', '/tmp/pwnlib-gdbscript-w3ygs817.gdb']
+2026-04-30T15:31:12:DEBUG:pwnlib.util.misc:Created script for new terminal:
+#!/usr/bin/python
+import os
+os.execve('/usr/bin/gdb', ['/usr/bin/gdb', '-q', './chall_patched', '-x', '/tmp/pwnlib-gdbscript-w3ygs817.gdb'], os.environ)
+
+2026-04-30T15:31:12:DEBUG:pwnlib.util.misc:Launching a new terminal: ['/usr/bin/kgx', '--', 'bash', '-c', '/tmp/tmpqdo_8f1t']
+================================================================================
+= Started at 2026-04-30T15:31:28                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+================================================================================
+= Started at 2026-04-30T15:31:28                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:31:28:INFO:pwnlib.tubes.process.process.139986254365712:Process '/usr/bin/gdbserver' stopped with exit code 0 (pid 20143)
+================================================================================
+= Started at 2026-04-30T15:31:28                                               =
+= sys.argv = [                                                                 =
+=   'temp.py',                                                                 =
+= ]                                                                            =
+================================================================================
+2026-04-30T15:31:28:INFO:pwnlib.tubes.process.process.139986255363584:Stopped process './chall_patched' (pid 20138)
